@@ -1,3 +1,4 @@
+import java.until.*;
 public class Pig {
 
     /*
@@ -26,7 +27,18 @@ public class Pig {
 
     // Implement your solution here!
     public static String pigLatin(String sentence) {
-        return null;
+        Set<char> vowels = new HashSet<>(Arrays.asList('a','e','i','o','u'));
+        String[] words = sentence.split(" ");
+        
+            //for word in senetence
+        String newSentence = "";
+        for(String word : words){
+            if(!vowels.contains(word.charAt(0))){
+                newSentence += word.subString(1) + word.charAt(0) +"ay ";
+            }
+        }
+        
+        return newSentence.strip();
     }
 
 
